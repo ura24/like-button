@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css';
 
 function App() {
@@ -11,9 +12,13 @@ function App() {
 }
 
 function LikeButton() {
-  const count = 999;
+  // const count = 999;
+  const [count, setCount] = useState(999);
+  const handClick = () => {
+    setCount(count + 1);
+  }
 
-  return <span className='likeButton'>♥ {count}</span>
+  return <span className='likeButton' onClick={handClick}>♥ {count}</span>
 }
 
 export default App;
